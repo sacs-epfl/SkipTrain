@@ -1,0 +1,5 @@
+Device Name,Inference time MobileNet v2 CPU-F (ms),Inference time CNN (ms),Training time CNN (ms),Training Time CNN (ms) total,Max Power consumption (W),Energy (Wh),Battery capacity (Wh),Battery capacity for training,Number of training rounds
+Xiaomi 12 Pro (Snapdragon),27,13.01937474,39.05812423,4374.509914,17.7,0.021508007,17.8,17.8,413
+Samsung Galaxy S22 Ultra (Snapdragon),29,13.98377287,41.95131862,4698.547686,15.1,0.019707797,19.4,19.4,492
+OnePlus Nord 2 5G,17,8.197384098,24.5921523,2754.321057,11,0.008415981,17.41,17.41,1034
+Xiaomi Poco X3,76,36.64712891,109.9413867,12313.43531,8.2,0.028047269,23.2,23.2,413
