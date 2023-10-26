@@ -97,17 +97,15 @@ class SkipTrainNode(DPSGDNode):
     
     def init_node(self, node_configs):
         self.remaining_rounds = None
-        self.consecutive_rounds = None
         self.prob_policy = node_configs["algorithm"]
+        energy_traces_path = node_configs["energy_traces"]
+        energy_traces = pd.read_csv(energy_traces_path)
+        
         if node_configs["algorithm"] == "skiptrain":
-            energy_traces_path = node_configs["energy_traces"]
-            energy_traces = pd.read_csv(energy_traces_path)
             self.consumption = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Energy (Wh)"]
             self.consecutive_training_rounds = node_configs["consecutive_training_rounds"]
             self.consecutive_synching_rounds = node_configs["consecutive_synching_rounds"]
         elif node_configs["algorithm"] == "skiptrain_constrained":
-            energy_traces_path = node_configs["energy_traces"]
-            energy_traces = pd.read_csv(energy_traces_path)
             self.consumption = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Energy (Wh)"]
             self.remaining_rounds = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Number of training rounds"]
             self.consecutive_training_rounds = node_configs["consecutive_training_rounds"]
@@ -117,15 +115,10 @@ class SkipTrainNode(DPSGDNode):
             logging.info(f"Remaining training rounds: {self.remaining_rounds}")
             logging.info(f"Training prob: {self.training_prob}")
         elif node_configs["algorithm"] == "dpsgd": 
-            energy_traces_path = node_configs["energy_traces"]
-            energy_traces = pd.read_csv(energy_traces_path)
             self.consumption = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Energy (Wh)"]
         elif node_configs["algorithm"] == "greedy":
-            energy_traces_path = node_configs["energy_traces"]
-            energy_traces = pd.read_csv(energy_traces_path)
             self.consumption = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Energy (Wh)"]
             self.remaining_rounds = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Number of training rounds"]
-            
 
         self.averaging = node_configs["averaging"]
 
@@ -224,7 +217,7 @@ class SkipTrainNode(DPSGDNode):
                 self.sharing._averaging(averaging_deque)
             else:
                 logging.info("Weighted average")
-                self.sharing._weighted_averaging(averaging_deque)
+                raise NotImplementedError
 
             model_params = self.sharing.model.state_dict()
             logging.debug(f"Averaged model: {model_params['conv1.weight'][0][0][0]}")
