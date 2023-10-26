@@ -7,7 +7,7 @@
 SkipTrain
 ==============
 
-This repository contains the code for running the experiemnts in the paper "Energy-Aware Decentralized Learning with Intermittent Model Training" authored by Martijn de Vos,  Akash Dhasade, Paolo Dini, Elia Guerra, Anne-Marie Kermarrec, Marco Miozzo, Rafael Pires, and Rishi Sharma.
+This repository contains the code for running the experiments in the paper "Energy-Aware Decentralized Learning with Intermittent Model Training" authored by Martijn de Vos,  Akash Dhasade, Paolo Dini, Elia Guerra, Anne-Marie Kermarrec, Marco Miozzo, Rafael Pires, and Rishi Sharma.
 
 -------------------------
 Setting up
@@ -27,7 +27,7 @@ Setting up
 
     pip install -r requirements.txt
 
-* Install skiptrain ::
+* Install SkipTrain ::
   
     pip3 install --editable .[dev]
 
@@ -35,7 +35,7 @@ Setting up
 
     python download_dataset.py
 
-* (Optional) Download other datasets from LEAF <https://github.com/TalwalkarLab/leaf> and place them in ``eval/data/``.
+* (Optional) Download the FEMNIST from LEAF <https://github.com/TalwalkarLab/leaf> and place them in ``eval/data/``.
  
 ----------------
 Running the code
@@ -72,4 +72,3 @@ Cite us as ::
    location = {},
    series = {}
    }
-
