@@ -112,8 +112,6 @@ class SkipTrainNode(DPSGDNode):
             self.consecutive_synching_rounds = node_configs["consecutive_synching_rounds"]
             max_training_rounds = (self.consecutive_training_rounds/(self.consecutive_training_rounds +  self.consecutive_synching_rounds))*float(self.iterations)
             self.training_prob = min(self.remaining_rounds/max_training_rounds,1)
-            logging.info(f"Remaining training rounds: {self.remaining_rounds}")
-            logging.info(f"Training prob: {self.training_prob}")
         elif node_configs["algorithm"] == "dpsgd": 
             self.consumption = energy_traces.iloc[self.rank % energy_traces.shape[0]]["Energy (Wh)"]
         elif node_configs["algorithm"] == "greedy":

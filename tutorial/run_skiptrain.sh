@@ -3,7 +3,7 @@
 decpy_path=../eval # Path to eval folder
 graph=8_nodes_3_regular.txt # Absolute path of the graph file
 run_path=../eval/data # Path to the folder where the graph and config file will be copied and the results will be stored
-config_file=config.ini
+config_file=config_FEMNIST.ini
 
 cp $graph config_file_skiptrain/$config_file $run_path
 env_python=~/miniconda3/envs/skiptrain/bin/python3 # Path to python executable of the environment | conda recommended
