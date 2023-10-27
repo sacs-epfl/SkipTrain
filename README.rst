@@ -48,16 +48,16 @@ Running the code
     * DPSGD: ``tutorial/run_dpsgd.sh``
     * Greedy: ``tutorial/run_greedy.sh``
 
-* The topologies adopted for the simularion are available in the ``tutorial/`` folder.
+* The topologies adopted for the simulation are available in the ``tutorial/`` folder.
 
 ------
 Citing
 ------
 
 Cite us as ::
-
+..
     @inproceedings{skiptrain,
-   author = {Dhasade, Akash and Kermarrec, Anne-Marie and Pires, Rafael and Sharma, Rishi and Vujasinovic, Milos},
+   author = {},
    title = {Energy-Aware Decentralized Learning with Intermittent Model Training},
    year = {2023},
    isbn = {},
@@ -72,3 +72,4 @@ Cite us as ::
    location = {},
    series = {}
    }
+..
